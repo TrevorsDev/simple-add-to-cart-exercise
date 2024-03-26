@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Quantity</title>
+</head>
+
+<body>
+    <button onclick="
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
+
+    <button onclick="
+        // cartQuantity = cartQuantity + 1;
+        // cartQuantity += 1;
+        cartQuantity++;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Add to Cart</button>
+
+    <button onclick="
+        cartQuantity += 2;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">+2</button>
+
+    <button onclick="
+        cartQuantity += 3;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">+3</button>
+
+    <button onclick="
+        cartQuantity += 4;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">+4</button>
+
+    <button onclick="
+        cartQuantity += 5;
+        console.log(`Cart is added by ${cartQuantity} items.`);
+    ">+5</button>
+
+    <button onclick="
+        if (cartQuantity !== 0) {
+            cartQuantity--;
+            console.log(`Cart Quantity Subtracted: ${cartQuantity}.`);
+        } else {
+            cartQuantity = 0;
+            console.log('Nothing to remove funny guy!');
+        };">Remove One Item</button>    
+
+    <button onclick="
+        if (cartQuantity > 0) {
+            cartQuantity -= 2;
+            console.log(cartQuantity);
+        } else {
+            cartQuantity = 0;
+            console.log('Bruh, theres nothing in your cart');
+        }">Remove Two Items</button>
+
+    <button onclick="
+        if (cartQuantity > 0) {
+            cartQuantity -= 3;
+            console.log(cartQuantity);
+        } else {
+            cartQuantity = 0;
+            console.log('Cant go below -1!');
+        }
+    ">Remove Three Items</button>
+    
+    <button onclick="
+        cartQuantity = 0;
+        console.log(`Cart was reset`);
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Reset Cart</button>
+
+    
+    <script>
+        let cartQuantity = 0;
+        let cost = 5 + (3*2) + 9;
+        console.log(`Cost of food: $${cost}`);
+        tax = (cost *.010);
+        console.log(`Tax (10%): $${tax}`);
+        totalCost = tax + cost;
+        console.log(`Total cost: $${totalCost}`);
+        
+    </script>
+</body>
+
+</html>
