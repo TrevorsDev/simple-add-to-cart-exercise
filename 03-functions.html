@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Functions</title>
+</head>
+
+<body>
+  <script>
+    /*
+    function function1() {
+      console.log('hello');
+      console.log(2+2);
+    }
+
+    function1();
+    */
+
+    // A return statement 'return = computerMove()', gets a value out of a function
+    // A parameter puts a value into a function
+    // A parameter works the same way as a variable. We can save a value by typing it between the parenthesis (inside the parameter), and then use it just like a variable.
+
+    function calculateTax(cost, taxPercent) {
+      console.log(cost* taxPercent);
+    }
+    // here, its like I am saving the value 2000 into the parameter 'parameter1'
+    calculateTax(2000, 0.2);
+    calculateTax(5000);
+
+    // We can add default values to our parameter. See the second parameter below
+    function calculateTax(cost, taxPercent = 0.1) {
+      console.log(cost* taxPercent);
+    }
+    // the second parameter value '0.2' will replace the default value of 'taxPercent'
+    calculateTax(2000, 0.2);
+    // There is no second parameter value given below, so this 'calculateTax' will use the default value of 'taxPercent = 0.1'
+    calculateTax(5000);
+
+  </script>
+</body>
+
+</html>

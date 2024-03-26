@@ -11,17 +11,7 @@
   <!-- Three buttons created for players choice
    Each button generates a randomized computer move that is stored in a variable for each player move -->
   <button onclick="
-  let randomNum = Math.floor(Math.random() * 3);
-  let computerMove = '';
-  let result = '';
-
-    if (randomNum >= 0 && randomNum < 1) {
-      computerMove = 'rock';
-    } else if (randomNum >= 1 && randomNum <  2) {
-      computerMove = 'paper';
-    } else if (randomNum >= 2 && randomNum < 3) {
-      computerMove = 'scissors';
-    }
+  const computerMove = pickCompMove();
    
     if (computerMove === 'rock') {
       result = 'Its a tie!';
@@ -36,17 +26,7 @@
 
 
   <button onclick="
-    let randomNum = Math.floor(Math.random() * 3);
-    let computerMove = '';
-    let result = '';
-  
-      if (randomNum >= 0 && randomNum < 1) {
-        computerMove = 'rock';
-      } else if (randomNum >= 1 && randomNum <  2) {
-        computerMove = 'paper';
-      } else if (randomNum >= 2 && randomNum < 3) {
-        computerMove = 'scissors';
-      };
+    const computerMove = pickCompMove();
 
       if (computerMove === 'rock') {
         result = 'Its a tie!';
@@ -58,20 +38,19 @@
 
       alert(`You chose rock, computer chose ${computerMove}. ${result}`);
     ">Paper</button>
-    
-    
+
+
   <button onclick="
-    let randomNum = Math.floor(Math.random() * 3);
-    let computerMove = '';
+    
+    ">Scissors</button>
+
+
+  <script>
+    
     let result = '';
 
-      if (randomNum >= 0 && randomNum < 1) {
-        computerMove = 'rock';
-      } else if (randomNum >= 1 && randomNum < 2) {
-        computerMove = 'paper';
-      } else if (randomNum >= 2 && randomNum < 3) {
-        computerMove = 'scissors';
-      };
+    function playGame() {
+      const computerMove = pickCompMove();
 
       if (computerMove === 'rock') {
         result = 'You lose!';
@@ -81,11 +60,23 @@
         result = 'Its a tie!'
       }
       alert(`You chose rock, computer chose ${computerMove}. ${result}`);
-    ">Scissors</button>
+    }
 
+    //When picking a function name, use verbage somewhere within it.
+    function pickCompMove() {
+      let randomNum = Math.floor(Math.random() * 3);
+      let computerMove = '';
 
-  <script>
+      if (randomNum >= 0 && randomNum < 1) {
+        computerMove = 'rock';
+      } else if (randomNum >= 1 && randomNum < 2) {
+        computerMove = 'paper';
+      } else if (randomNum >= 2 && randomNum < 3) {
+        computerMove = 'scissors';
+      };
 
+      return computerMove;
+    }
   </script>
 </body>
 

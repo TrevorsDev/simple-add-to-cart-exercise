@@ -37,12 +37,57 @@
         console.log('You can not drive');
       }
     */
-   
+   /*
     console.log(true && true);
 
     console.log(true || false);
 
     console.log(!true);
+    */
+    /*
+    // falsey values: 0, '', NaN, underfined, null
+    // any value not on the above list is truthy
+    if (5) {
+      console.log('turthy');
+    }
+
+    const cartQuantity = 5;
+// behaves just like (cartQuantity > 0)
+    if (cartQuantity) {
+      console.log('cart has products');
+    }
+
+    //!0 is a truthy value bc it means 'not' 0.
+    console.log(!0);
+
+    //the result below will log NaN, or 'not a number' bc text is a string and 5 is a number
+    console.log('text' / 5);
+
+    // trying to log a variable that hasnt been assigined a value will return an 'undefined' response.
+    let variable1;
+    console.log(variable1);
+    */
+
+    // the below is similar to an if else statement. Called a Turnary Opperator
+    true ? 'truthy' : 'falsy'
+    
+    // bc result = true, is true, the value 'truthy' is saved to the variable 'result'
+    const result = true ? 'truthy' : 'falsy'
+    console.log(result);
+
+    // below, the code on the right of the && opperator doesnt run bc when the code is ran, it stops evaluating the statement after a value is returned 'false'. This is called a 'gaurd opperator'
+    false && console.log('hello');
+
+    // below, if the 1st value is falsy, the gaurd opperator will stop early. The value saved to 'message' will then be 'false';
+    const message = flase && 'hello';
+    console.log(message);
+
+    // returns the first truthy value, which is 'EUR'
+    const currency = 'EUR' || 'USD';
+    console.log(currency);
+
+    const currency2 = undefined || 'USD';
+    console.log(currency2);
     </script>
 </body>
 
