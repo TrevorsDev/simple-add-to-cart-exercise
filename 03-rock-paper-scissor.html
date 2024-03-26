@@ -26,40 +26,44 @@
 
 
   <button onclick="
-    const computerMove = pickCompMove();
-
-      if (computerMove === 'rock') {
-        result = 'Its a tie!';
-      } else if (computerMove === 'paper') {
-        result = 'You lose!';
-      } else if (computerMove === 'scissors') {
-        result = 'You win!';
-      };
-
-      alert(`You chose rock, computer chose ${computerMove}. ${result}`);
+    playGame('paper');
     ">Paper</button>
 
 
   <button onclick="
-    
+      playGame('scissors');
     ">Scissors</button>
 
 
   <script>
-    
-    let result = '';
 
-    function playGame() {
+
+
+
+    function playGame(playerMove) {
       const computerMove = pickCompMove();
 
-      if (computerMove === 'rock') {
-        result = 'You lose!';
-      } else if (computerMove === 'paper') {
-        result = 'You win!';
-      } else if (computerMove === 'scissors') {
-        result = 'Its a tie!'
+      let result = '';
+
+      if (playerMove === 'scissors') {
+        if (computerMove === 'rock') {
+          result = 'You lose!';
+        } else if (computerMove === 'paper') {
+          result = 'You win!';
+        } else if (computerMove === 'scissors') {
+          result = 'Its a tie!'
+        }
+      } else if (playerMove === 'paper') {
+        if (computerMove === 'rock') {
+          result = 'You win!';
+        } else if (computerMove === 'paper') {
+          result = 'Its a tie!';
+        } else if (computerMove === 'scissors') {
+          result = 'You lose!'
+        }
       }
-      alert(`You chose rock, computer chose ${computerMove}. ${result}`);
+
+      alert(`You chose ${playerMove}, computer chose ${computerMove}. ${result}`);
     }
 
     //When picking a function name, use verbage somewhere within it.
