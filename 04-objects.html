@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Objects</title>
+</head>
+
+<body>
+  <script>
+    // Objects make our code more organized. Instead of creating a bunch of variables for each property and value, we can group them in one object. They also allow us to use multiple objects together, ex. displaying all the properties at once.
+    // An object is just another type of value. We can save an object inside a variable. The object holds within it a property and a value:
+    const product = {
+      name: 'socks',
+      price: 1090
+    };
+    console.log(product);
+    console.log(product.name);
+    console.log(product.price);
+    // If we access a property that doesnt exist, the value will be undefined
+    console.log(product.dosntExist);
+
+    product.name = 'cotton socks';
+    console.log(product);
+    // We can add a value to an object by typing a property that doesnt yet exist, and assigining it to a new value.
+    product.new = 'yes';
+    console.log(product);
+    console.log(product.new);
+    // we can remove a value from an object by using the 'delete' keyword:
+    delete product.new;
+    console.log(product);
+    // Using the 'typeof' operator we can check the type of a given value:
+    console.log(typeof product);
+  </script>
+</body>
+
+</html>
