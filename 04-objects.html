@@ -30,6 +30,40 @@
     console.log(product);
     // Using the 'typeof' operator we can check the type of a given value:
     console.log(typeof product);
+
+    const product2 = {
+      name: 'shirt',
+      ['delivery-time']: '1 day',
+      'delivery-day': 'Tuesday',
+      // below is a nested object
+      rating: {
+        stars: 4.5,
+        count: 87
+      },
+      // when we save a function inside an object, this is called a 'method'
+      funProperty: function function1() {
+        console.log('this is a function inside an object')
+      }
+    };
+    console.log(product2);
+    console.log(product2.name);
+    // Bracket notation lets us access properties that dont work with dot notation. 
+    console.log(product2['name']);
+    // JS thinks that we are trying to subtract delivery and time below when using dot notation
+    console.log('product2.delivery-time');
+    console.log(['product2.delivery-time']);
+
+    console.log(product2.rating.stars);
+    product2.funProperty();
+    // console.log: object + function = method
+    console.log(typeof console.log);
+    //stringify is a method of the JSON object. aka: a function that is saved inside the JSON object
+    //JSON doesnt support functions. Which is why 'funProperty' isnt in the JSON object
+    console.log(JSON.stringify(product2));
+
+    // JSON.parse converts a JSON object back into a JS object
+    const jsonString = JSON.stringify(product2);
+    console.log(JSON.parse(jsonString));
   </script>
 </body>
 
