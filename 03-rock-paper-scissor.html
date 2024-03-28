@@ -11,23 +11,13 @@
   <!-- Three buttons created for players choice
    Each button generates a randomized computer move that is stored in a variable for each player move -->
   <button onclick="
-  const computerMove = pickCompMove();
-   
-    if (computerMove === 'rock') {
-      result = 'Its a tie!';
-    } else if(computerMove === 'paper') {
-      result = 'You lose!';
-    } else if (computerMove === 'scissors') {
-      result = 'You win!';
-    };
-
-    alert(`You chose rock, computer chose ${computerMove}. ${result}`);
+    playGame('rock');
   ">Rock</button>
 
 
   <button onclick="
     playGame('paper');
-    ">Paper</button>
+  ">Paper</button>
 
 
   <button onclick="
@@ -36,10 +26,6 @@
 
 
   <script>
-
-
-
-
     function playGame(playerMove) {
       const computerMove = pickCompMove();
 
@@ -61,6 +47,14 @@
         } else if (computerMove === 'scissors') {
           result = 'You lose!'
         }
+      } else if (playerMove === 'rock') {
+        if (computerMove === 'rock') {
+          result = 'Its a tie!';
+        } else if (computerMove === 'paper') {
+          result = 'You lose!';
+        } else if (computerMove === 'scissors') {
+          result = 'You win!';
+        };
       }
 
       alert(`You chose ${playerMove}, computer chose ${computerMove}. ${result}`);

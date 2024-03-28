@@ -81,6 +81,35 @@
 
       return computerMove;
     }
+
+    function scoreKeeper() {
+
+      // let score ;
+
+      for (let score = 0; score < 10; score++) {
+        const scoreValues = {
+          compScore: score,
+          playerScore: score,
+          tie: score
+        }
+        console.log(scoreValues.compScore);
+      }
+
+      if (playerMove === computerMove) {
+        scoreKeeper.compScore = scoreKeeper.tie
+      }
+
+      const scoreValues = {
+      compScore: score++,
+      playerScore: score++,
+      tie: score++
+    }
+    }
+
+    scoreKeeper();
+
+    
+
   </script>
 </body>
 
@@ -91,6 +120,9 @@
   2) The computer generates a random move of its own
   3) We compare our move to its move
   4) Either it wins or we do
-  5) A score is kept and shows up in a popup window as 'We win', 'computer wins', or 'Tie'
+  5) A score is alerted as 'We win', 'computer wins', or 'Tie'
+  6) Each move is saved and shown in the alert window
   
-  1) Create a variable for win, lose, and tie-->
+  1) Create a variable for win, lose, and tie
+  2) If computer wins, a count is stored +1 to a variable. Likewise for player win and ties
+  3) -->
