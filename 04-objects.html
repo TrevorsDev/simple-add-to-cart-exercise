@@ -64,6 +64,55 @@
     // JSON.parse converts a JSON object back into a JS object
     const jsonString = JSON.stringify(product2);
     console.log(JSON.parse(jsonString));
+    // Strings can also have properties, like the length property in this case.
+    // Strings, numbers, and booelans have properties bc of whats called 'Auto-Boxing' in JS. JS automatically auto-boxes these primatives, aka, turns them into objects.
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    const object1 = {
+      message: 'hello'
+    };
+    const object2 = object1;
+
+    object1.message = 'Good job';
+    console.log(object1);
+    console.log(object2);
+
+    const object3 = {
+      message: 'Good job'
+    };
+    //Objects are references. The code below compares the two references, not the objects themselves. As such, this will return false.
+    console.log(object3 === object1);
+    //However, bc we set object2 to equal object1 above, these two variables have the same reference. As such, this will return true.
+    console.log(object2 === object1);
+    //If we wanted to check the actual values inside, we would compare the references properties to each other. The code below returns true :
+    console.log(object3.message === object2.message);
+
+    const object4 = {
+      message: 'Good job',
+      price: 799
+    };
+    // In the code below, if the variable name and the property name are the same on either side of the '=', we can write the next line in short, and it will mean the same thing.
+    // const message = object4.message;
+    // another explaination is that the variable below pulls the values: message, and price out of object4 and saves them in the variables message and price.
+    const { message, price } = object4;
+    console.log(message);
+    console.log(price);
+
+    const object5 = {
+      // message: message,
+      //short hand property below
+      message,
+      // method: function function1() {
+      // console.log('method');
+      // }
+      method() {
+        console.log('method');
+      }
+    };
+    console.log(object5);
+    object5.method();
+
   </script>
 </body>
 
