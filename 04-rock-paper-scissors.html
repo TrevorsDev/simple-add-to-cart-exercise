@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+  <p>Rock Paper Scissors</p>
+
+  <!-- Three buttons created for players choice
+   Each button generates a randomized computer move that is stored in a variable for each player move -->
+  <button onclick="
+    playGame('rock');
+  ">Rock</button>
+
+
+  <button onclick="
+    playGame('paper');
+    ">Paper</button>
+
+
+  <button onclick="
+      playGame('scissors');
+    ">Scissors</button>
+
+
+  <script>
+
+    const computerMove = pickCompMove();
+
+    function playGame(playerMove) {
+      const computerMove = pickCompMove();
+
+      let result = '';
+
+      if (playerMove === 'scissors') {
+        if (computerMove === 'rock') {
+          result = 'You lose!';
+        } else if (computerMove === 'paper') {
+          result = 'You win!';
+        } else if (computerMove === 'scissors') {
+          result = 'Its a tie!';
+        }
+      }
+      else if (playerMove === 'paper') {
+        if (computerMove === 'rock') {
+          result = 'You win!';
+        } else if (computerMove === 'paper') {
+          result = 'Its a tie!';
+        } else if (computerMove === 'scissors') {
+          result = 'You lose!';
+        }
+      }
+      else if (playerMove === 'rock') {
+        if (computerMove === 'rock') {
+          result = 'Its a tie!';
+        } else if (computerMove === 'paper') {
+          result = 'You lose!';
+        } else if (computerMove === 'scissors') {
+          result = 'You win!';
+        }
+      }
+
+
+      alert(`You chose ${playerMove}, computer chose ${computerMove}. ${result}`);
+    }
+
+    //When picking a function name, use verbage somewhere within it.
+    function pickCompMove() {
+      let randomNum = Math.floor(Math.random() * 3);
+      let computerMove = '';
+
+      if (randomNum >= 0 && randomNum < 1) {
+        computerMove = 'rock';
+      } else if (randomNum >= 1 && randomNum < 2) {
+        computerMove = 'paper';
+      } else if (randomNum >= 2 && randomNum < 3) {
+        computerMove = 'scissors';
+      };
+
+      return computerMove;
+    }
+  </script>
+</body>
+
+</html>
+
+<!-- Creating a score tracker
+  1) We click for our own move
+  2) The computer generates a random move of its own
+  3) We compare our move to its move
+  4) Either it wins or we do
+  5) A score is kept and shows up in a popup window as 'We win', 'computer wins', or 'Tie'
+  
+  1) Create a variable for win, lose, and tie-->
