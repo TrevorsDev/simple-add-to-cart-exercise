@@ -7,6 +7,7 @@
 
 <body>
   <script>
+    /*
     // Objects make our code more organized. Instead of creating a bunch of variables for each property and value, we can group them in one object. They also allow us to use multiple objects together, ex. displaying all the properties at once.
     // An object is just another type of value. We can save an object inside a variable. The object holds within it a property and a value:
     const product = {
@@ -112,7 +113,52 @@
     };
     console.log(object5);
     object5.method();
+    */
+    // Lesson 8 Exercises
+    const product = {
+      ball: 'basketball',
+      price1: 2095,
+      gloves: 'boxing',
+      price2: 3000
+    };
 
+    console.log(product);
+
+    product.price += 500;
+    console.log(product);
+
+    product.deliveryTime = '3 days';
+    console.log(product);
+
+
+    function comparePrice(product1, product2) {
+      if (product1.price < product2.price) {
+        return product1;
+      } else {
+        return product2;
+      }
+    }
+
+    const bodyWear = {
+      jewlery: 'watch',
+      price: 200000
+    }
+
+    const flight = {
+      plane: 'glider',
+      price: 30000000
+    }
+
+    console.log(comparePrice(bodyWear, flight));
+
+    const upper = 'This SHOUld ALL bE loWERcasE! ';
+    const lower = upper.toLowerCase();
+    console.log(lower);
+
+    const rept = lower.repeat(4);
+    console.log(rept);
+
+    //Go back over the Objects section
   </script>
 </body>
 

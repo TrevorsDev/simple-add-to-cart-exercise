@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+
+<body>
+  <button>Kia Ora</button>
+  <button class="js-button">Second Kia Ora</button>
+
+  <script>
+    // the DOM combines JS and HTML together
+    //.querySelector will select any HTML element that we chose in the parenthesis. Adding '.innerHTML' to the querySelector will grab the innerHTML inside the button.
+    console.log(document.querySelector('button').innerHTML);
+    document.querySelector('button').innerHTML = 'Kia Kaha';
+    // the code below grabs the second button by using the class selector in the argument of our querySelector. A common practice when using a class for JS is to label it with the prefix 'js' before the descriptor aka: 'js-button'.
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement);
+    /*
+    document.body.innerHTML = 'Kia Ora';
+    document.title = 'Good Morning!'
+    */
+  </script>
+</body>
+
+</html>
