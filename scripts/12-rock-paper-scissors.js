@@ -23,6 +23,7 @@ let isAutoPlaying = false;
 let intervalID;
 
 function autoPlay() {
+  //The line below basically checks if 'isAutoPlaying' is true. bc '!isAutoPlaying' is true, the function will run
   if (!isAutoPlaying) {
     intervalID = setInterval(() => {
       const playerMove = pickCompMove();
@@ -34,6 +35,7 @@ function autoPlay() {
     isAutoPlaying = false;
   }
 }
+
 function playGame(playerMove) {
   const computerMove = pickCompMove();
 

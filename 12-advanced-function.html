@@ -54,6 +54,7 @@
     // console.log('interval');
     // }, 3000);
 
+    /*
     [
       'make dinner',
       'wash dishes',
@@ -82,7 +83,31 @@
     function runTwice(fun) {
       
     };
+    */
+
+
+    const activities = [
+      'make dinner',
+      'wash dishes',
+      'study coding'
+    ];
+
+    activities.forEach((activity, index) => {
+      const interval = setInterval(() => {
+        if (activity === 'wash dishes') {
+          return;
+        }
+        // console.log(activity);
+        // console.log(index);
+      }, 3000);
+    });
+
+    const add = runTwice() => {
+      console.log(2 + 3);
+    }
+    
   </script>
+
 </body>
 
 </html>
