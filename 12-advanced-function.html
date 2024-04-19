@@ -9,7 +9,30 @@
 
 <body>
 
+  <button id="finished">Chek It!</button>
+
+  <button id="business">Big Business</button>
   <script>
+
+    const button1 = document.getElementById('finished');
+    const button2 = document.getElementById('business');
+    // One way to toggle a buttons textContent on a click
+    button1.addEventListener('click', function() {
+      if (this.textContent === 'Chek It!') {
+        this.textContent = 'You Got This!';
+      } else {
+        this.textContent = 'Chek It!';
+      }
+    });
+    // A refactored method to toggle a buttons text content on Click
+    button2.addEventListener('click', function() {
+      this.textContent = this.textContent === 'Big Business' ? 'You\'ve Got It!': 'Big Business'
+    });
+
+
+    // document.getElementById('finished').addEventListener('click', function() {
+    //   this.textContent = 'Finished';
+    // });
     /* function greeting() {
        console.log('hello');
      }
@@ -102,10 +125,28 @@
       }, 3000);
     });
 
-    const add = runTwice() => {
+    const add = () => {
       console.log(2 + 3);
+      return(2+3);
     }
+
+    function tryMe() {for (let i = 0; i < 4; i++) {
+      add();
+    }
+    return;
+  }
+  tryMe();
+
     
+    function runTwice(fun) {
+      fun();
+      fun();
+    }
+
+    runTwice(tryMe);
+    console.log(add());
+    
+  
   </script>
 
 </body>
